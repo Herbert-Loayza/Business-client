@@ -16,19 +16,18 @@ public class ClientController {
     private ClientRepository clientRepository;
 
     @GetMapping
-    private Flux<ClientEntity> getAllClients() {
+    public Flux<ClientEntity> getAllClients() {
         return clientRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    private Mono<ClientEntity> getClientById(@PathVariable String id) {
+    public Mono<ClientEntity> getClientById(@PathVariable String id) {
         return clientRepository.findById(id);
     }
 
     @PostMapping("/update")
-    private Mono<ClientEntity> update(@RequestBody ClientEntity clientEntity) {
+    public Mono<ClientEntity> update(@RequestBody ClientEntity clientEntity) {
         return clientRepository.save(clientEntity);
     }
-
-
+    
 }
