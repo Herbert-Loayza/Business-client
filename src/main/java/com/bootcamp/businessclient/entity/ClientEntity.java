@@ -13,6 +13,6 @@ public class ClientEntity {
     private String id;
     private String name;
     private String surname;
-    private Double account;
+    private Long account;
 
 }
